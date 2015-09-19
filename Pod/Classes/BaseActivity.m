@@ -14,6 +14,9 @@
     
     UIImage * image = [UIImage imageNamed:imageNamed];
     if (nil == image) {
+        image = [UIImage imageNamed:[NSString stringWithFormat:@"ShareOne.bundle/%@", imageNamed]];
+    }
+    if (nil == image) {
         image = [UIImage imageNamed:[NSString stringWithFormat:@"Frameworks/ShareOne.framework/%@", imageNamed]];
     }
     
