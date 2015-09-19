@@ -10,6 +10,16 @@
 
 @implementation BaseActivity
 
++ (UIImage *)imageNamed:(NSString *)imageNamed {
+    
+    UIImage * image = [UIImage imageNamed:imageNamed];
+    if (nil == image) {
+        image = [UIImage imageNamed:[NSString stringWithFormat:@"Frameworks/ShareOne.framework/%@", imageNamed]];
+    }
+    
+    return image;
+}
+
 + (UIActivityCategory)activityCategory
 {
     return UIActivityCategoryShare;
@@ -22,7 +32,7 @@
 
 - (UIImage *)activityImage
 {
-    return [UIImage imageNamed:[NSString stringWithFormat:@"Frameworks/ShareOne.framework/ShareOne.bundle/%@", [self activityType]]];
+    return [BaseActivity imageNamed:[self activityType]];
 }
 
 - (NSString *)activityTitle

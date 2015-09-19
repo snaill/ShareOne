@@ -10,4 +10,5 @@
 
 @interface BaseActivity : UIActivity
 
++ (UIImage *)imageNamed:(NSString *)imageNamed;
 @end

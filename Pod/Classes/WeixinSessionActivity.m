@@ -7,12 +7,13 @@
 //
 
 #import "WeixinSessionActivity.h"
+#import "BaseActivity.h"
 
 @implementation WeixinSessionActivity
 
 - (UIImage *)activityImage
 {
-    return [[[UIDevice currentDevice] systemVersion] intValue] >= 8 ? [UIImage imageNamed:@"Frameworks/ShareOne.framework/ShareOne.bundle/icon_session-8.png"] : [UIImage imageNamed:@"Frameworks/ShareOne.framework/ShareOne.bundle/icon_session.png"];
+    return [[[UIDevice currentDevice] systemVersion] intValue] >= 8 ? [BaseActivity imageNamed:@"icon_session-8.png"] : [BaseActivity imageNamed:@"icon_session.png"];
 }
 
 - (NSString *)activityTitle
