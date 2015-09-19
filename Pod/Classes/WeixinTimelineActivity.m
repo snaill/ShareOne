@@ -7,6 +7,7 @@
 //
 
 #import "WeixinTimelineActivity.h"
+#import "BaseActivity.h"
 
 @implementation WeixinTimelineActivity
 
@@ -21,7 +22,7 @@
 
 - (UIImage *)activityImage
 {
-    return [[[UIDevice currentDevice] systemVersion] intValue] >= 8 ? [UIImage imageNamed:@"Frameworks/ShareOne.framework/ShareOne.bundle/icon_timeline-8.png"] : [UIImage imageNamed:@"Frameworks/ShareOne.framework/ShareOne.bundle/icon_timeline.png"];
+    return [[[UIDevice currentDevice] systemVersion] intValue] >= 8 ? [BaseActivity imageNamed:@"icon_timeline-8.png"] : [BaseActivity imageNamed:@"icon_timeline.png"];
 }
 
 - (NSString *)activityTitle
