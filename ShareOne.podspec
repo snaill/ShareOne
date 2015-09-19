@@ -9,15 +9,15 @@
 Pod::Spec.new do |s|
   s.name             = "ShareOne"
   s.version          = "0.1.0"
-  s.summary          = "A short description of ShareOne."
+  s.summary          = "微信QQ分享库"
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
-  s.description      = <<-DESC
-                       DESC
+#  s.description      = <<-DESC
+#                       DESC
 
   s.homepage         = "https://github.com/snaill/ShareOne"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
@@ -43,7 +43,6 @@ Pod::Spec.new do |s|
   # ――― Subspec ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
   s.subspec 'TencentOpenAPI' do |ts|
-    ts.resources = "Pod/SDK/TencentOpenAPI-2.9.0-min/TencentOpenApi_IOS_Bundle.bundle"
     ts.vendored_frameworks = "Pod/SDK/TencentOpenAPI-2.9.0-min/TencentOpenAPI.framework"
     ts.frameworks = 'Security','CoreTelephony','SystemConfiguration','CoreGraphics'
     ts.libraries  = 'z','sqlite3','iconv','stdc++'
