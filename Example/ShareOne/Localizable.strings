@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  ShareOne
+
+  Created by Snaill on 15/9/19.
+  Copyright © 2015年 snaill. All rights reserved.
+*/
+
+"%@ Share" = "%@";
+
+"WeChat Session" = "微信";
+
+"WeChat Timeline" = "微信朋友圈";
+
+"QQActivity" = "QQ";
+
+"QZoneActivity" = "QQ空间";

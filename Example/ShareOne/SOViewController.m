@@ -7,9 +7,11 @@
 //
 
 #import "SOViewController.h"
+#import <ShareOne/ShareOne.h>
 
 @interface SOViewController ()
 
+@property (nonatomic, weak) IBOutlet UIImageView * imageView;
 @end
 
 @implementation SOViewController
@@ -26,4 +28,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)onShare:(id)sender {
+
+    NSArray * activityItems = @[@"ShareOne", self.imageView.image, [NSURL URLWithString:@"http://baidu.com"]];
+    NSArray * activitys = [ShareOne activitysWithTypes:@[@(ShareOneTypeWeixin), @(ShareOneTypeWeixinTimeline), @(ShareOneTypeQQ), @(ShareOneTypeQZone)]];
+    UIActivityViewController *activityView = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:activitys];
+    [self presentViewController:activityView animated:YES completion:nil];
+}
 @end

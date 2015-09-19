@@ -7,12 +7,16 @@
 //
 
 #import "SOAppDelegate.h"
+#import <ShareOne/ShareOne.h>
 
 @implementation SOAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [ShareOne registerWX:@"wx11111111"];
+    [ShareOne registerQQ:@"222222"];
+    
     return YES;
 }
 

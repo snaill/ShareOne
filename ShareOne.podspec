@@ -19,22 +19,41 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/ShareOne"
+  s.homepage         = "https://github.com/snaill/ShareOne"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "snaill" => "snaill@jeebook.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/ShareOne.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/snaill/ShareOne.git", :tag => s.version.to_s }
+#  s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/**/*'
+#  s.compiler_flags = '-ENABLE_BITCODE=NO'
+
+  s.source_files = 'Pod/Classes/**/*.{h,m}'
   s.resource_bundles = {
     'ShareOne' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.public_header_files = 'Pod/Classes/ShareOne.h'
+  # s.frameworks = 'Pod/SDK/TencentOpenAPI-2.9.0-min/TencentOpenAPI.framework'
   # s.dependency 'AFNetworking', '~> 2.3'
+
+  # ――― Subspec ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+
+  s.subspec 'TencentOpenAPI' do |ts|
+    ts.resources = "Pod/SDK/TencentOpenAPI-2.9.0-min/TencentOpenApi_IOS_Bundle.bundle"
+    ts.vendored_frameworks = "Pod/SDK/TencentOpenAPI-2.9.0-min/TencentOpenAPI.framework"
+    ts.frameworks = 'Security','CoreTelephony','SystemConfiguration','CoreGraphics'
+    ts.libraries  = 'z','sqlite3','iconv','stdc++'
+  end
+
+  s.subspec 'Weixin' do |ts|
+    ts.vendored_libraries = "Pod/SDK/WeChatSDK_1.5/libWeChatSDK.a"
+    ts.source_files = "Pod/SDK/WeChatSDK_1.5/**/*.h"
+  end
+
+  s.default_subspecs = 'TencentOpenAPI', 'Weixin'
+
 end
