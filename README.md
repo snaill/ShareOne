@@ -42,11 +42,11 @@ pod "ShareOne"
 * 调用UIActivityViewController实现分享
 
 ```ruby
-    NSArray * activity = [ShareOne activitysWithTypes:@[@(ShareOneTypeWeixin), @(ShareOneTypeWeixinTimeline), @(ShareOneTypeQQ), @(ShareOneTypeQZone)]];
+NSArray * activity = [ShareOne activitysWithTypes:@[@(ShareOneTypeWeixin), @(ShareOneTypeWeixinTimeline), @(ShareOneTypeQQ), @(ShareOneTypeQZone)]];
     
-    NSMutableArray * activityItems = @[title, image, url];    
-    UIActivityViewController *activityView = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:activity];
-    [self presentViewController:activityView animated:YES completion:nil];
+NSMutableArray * activityItems = @[title, image, url];    
+UIActivityViewController *activityView = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:activity];
+[self presentViewController:activityView animated:YES completion:nil];
 ```
     
 ## Requirements
