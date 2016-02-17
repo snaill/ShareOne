@@ -10,7 +10,7 @@ ShareOne是一款用于分享到微信/QQ的库，相对于已有的分享库，
 * 采用自定义UIActivity
 * 接口简单
 
-注：分享到微信的代码来源于[WeixinActivity](https://github.com/iDay/WeixinActivity)，本来ShareOne是依赖于WeixinActivity，但由于XCode 7增加BITCODE的设置，而WxApi和QQ API都没有跟随更新，导致部署时编译错误。在WeixinActivity未更新前，暂时将代码并入ShareOne中，以方便使用。
+注：分享到微信的代码来源于[WeixinActivity](https://github.com/iDay/WeixinActivity)，本来ShareOne是依赖于WeixinActivity，但由于Xcode 7增加BITCODE的设置，而WxApi和QQ API都没有跟随更新，导致部署时编译错误。在WeixinActivity未更新前，暂时将代码并入ShareOne中，以方便使用。
 
 ## Installation
 
